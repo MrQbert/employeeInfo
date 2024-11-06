@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         email= findViewById(R.id.email);
 
         db = openOrCreateDatabase("Wright",MODE_PRIVATE, null);
-        db.execSQL("Create table if not exists employee (EmpLname varchar(50),EmpFname varchar(50),EmpPhone varchar(25),EmpEmail varchar(25))");
+        db.execSQL("create table if not exists employee (EmpLname varchar(50),EmpFname varchar(50),EmpPhone varchar(25),EmpEmail varchar(25));");
         sb.append("Hello World\n");
         sb.append("This is Rob");
 
@@ -48,19 +48,20 @@ public class MainActivity extends AppCompatActivity {
             sb.append("One of the field is empty\nFix the Entries");
             ShowMessage("Error",sb.toString());
         }
-        db.execSQL("insert into employee(EmpLname, EmpFname, EmpPhone, EmpEmail) Values('" + lnameString + "',''" + fnameString + "',''" + phoneString + "',''"
-                + emailString + "',''");
-//        ClearText();
+        db.execSQL("insert into employee(EmpLname, EmpFname, EmpPhone, EmpEmail) Values('" + lnameString + "','" + fnameString + "','" + phoneString + "','"
+                + emailString + "');");
+        ShowMessage("Success","You Entered a record");
+        ClearText();
 
     }
-//    public void ClearText(View v){
-//        lname.setText("");
-//        fname.setText("");
-//        phone.setText("");
-//        email.setText("");
-//        lname.requestFocus();
-//
-//    }
+    public void ClearText(){
+        lname.setText("");
+        fname.setText("");
+        phone.setText("");
+        email.setText("");
+        lname.requestFocus();
+
+    }
     public void ShowMessage(String title, String message){
         AlertDialog.Builder messBr = new AlertDialog.Builder(this);
         messBr.setCancelable(true);
