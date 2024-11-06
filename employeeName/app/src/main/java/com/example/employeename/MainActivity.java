@@ -3,6 +3,7 @@ package com.example.employeename;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -53,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
         ShowMessage("Success","You Entered a record");
         ClearText();
 
+    }
+
+    public void toSearch(View v){
+        Intent i = new Intent(this, activity_query.class);
+        startActivity(i);
     }
     public void ClearText(){
         lname.setText("");
