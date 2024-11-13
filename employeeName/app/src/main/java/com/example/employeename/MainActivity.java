@@ -60,6 +60,11 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, activity_query.class);
         startActivity(i);
     }
+
+    public void toSearchAll(View v){
+        Intent i = new Intent(this,activity_search_all.class);
+        startActivity(i);
+    }
     public void ClearText(){
         lname.setText("");
         fname.setText("");
