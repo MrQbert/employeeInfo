@@ -21,8 +21,8 @@ public class activity_query extends AppCompatActivity {
 
         db= openOrCreateDatabase("Wright", MODE_PRIVATE, null);
         db.execSQL("create table if not exists employee (EmpLname varchar(50),EmpFname varchar(50),EmpPhone varchar(25),EmpEmail varchar(25));");
-        lname = findViewById(R.id.lname);
-        fname = findViewById(R.id.fname);
+        lname = findViewById(R.id.lastname);
+        fname = findViewById(R.id.firstname);
         phone = findViewById(R.id.phone);
         email= findViewById(R.id.email);
         id = findViewById(R.id.empID);
