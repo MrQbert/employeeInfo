@@ -66,7 +66,7 @@ public class activity_search_all extends AppCompatActivity {
             startActivity(intent);
         }
 
-        @Override
+
 
     }
 
